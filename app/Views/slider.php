@@ -28,7 +28,7 @@
  </div>
 
 
-    <input type="hidden" id="u" value="<?= base_url('public/uploads/') ?>">
+    <input type="hidden" id="u" value="<?= base_url('uploads/') ?>">
 <script>  
 $(document).ready(function(){
 $.ajax({
