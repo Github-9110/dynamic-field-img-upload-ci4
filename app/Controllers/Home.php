@@ -15,17 +15,30 @@ class Home extends BaseController
         if (is_array($_FILES)) {
             foreach($this->request->getFileMultiple('file') as $item)
              {   
- 
+               
+                $imgname = str_replace(' ', '_', $item->getClientName());
                 $item->move(FCPATH . 'uploads');
                 $data = [
-                    'name' =>  $item->getClientName(),
-                    'image'  => $item->getClientMimeType()
+                    'name' =>  "null",
+                    'image'  =>$imgname
                   ];
+                 
                 $model = new ImageModel();
                 $model->insert($data);
 
-             }
-        }
-       
+             } 
+        } 
     }
+    public function slider(){
+        return view('slider');
+        }
+    public function footer_slider(){
+        $model = new ImageModel();
+        $sliders = $model->findAll();
+        return  $this->response->setJSON([
+            'footers' => $sliders,
+        ]);
+      }
+
+    
 }

@@ -26,7 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-	<h2 style="color:Black">Dynamic Image Field</h2>
+	<h2 style="color:Black">Dynamic Image Field <span><a href="<?= base_url('/slider') ?>">slider</a></span></h2>
 	
 	<div style="width:40%;">
 		<form id="uploadForm" action="" method="post">
